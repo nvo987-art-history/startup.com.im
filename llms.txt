@@ -1,0 +1,107 @@
+# NVO987 — Culture sans logement
+
+> https://startup.com.im/
+
+## Identity
+
+Name: NVO987 – Culture Visuelle Moderne et Contemporaine
+Project: Culture sans logement
+Language: French
+Founded: 2026
+Contact: contact@nvo987.fr
+
+Primary website:
+https://startup.com.im/
+
+Organization:
+https://nvo987.fr/
+
+Founder / researcher:
+Nicholas Van-Orton
+https://nvo987.us/
+
+## Project
+
+Culture sans logement is a cultural startup project with social impact.
+
+Its purpose is to broaden access to culture, knowledge and cultural resources
+for people experiencing housing difficulties.
+
+Core principle:
+
+"L'accès à la culture ne doit pas dépendre du fait de disposer ou non d'un
+logement stable."
+
+## Main areas
+
+- Culture
+- Knowledge
+- Access
+- Visual culture
+- Modern and contemporary art
+- Art history
+- Cultural research
+- Cultural mediation
+- Digital heritage
+- Social and institutional collaboration
+
+## Project architecture
+
+### Culture
+
+Making cultural content and resources more accessible.
+
+### Knowledge
+
+Facilitating the circulation of knowledge and educational resources.
+
+### Ecosystem
+
+Developing collaboration with cultural, social and institutional actors.
+
+## Organization
+
+NVO987 – Culture Visuelle Moderne et Contemporaine is a French cultural and
+research association founded by Nicholas Van-Orton.
+
+Its activities include research, documentation, archiving, data structuring,
+publishing, conferences, workshops, exhibitions, screenings, educational
+programs and cultural mediation.
+
+Research interests include visual culture, art history, colour, visual
+perception, digital technologies, contemporary art and artificial
+intelligence.
+
+## Decentralized identity
+
+DID:
+did:web:identity.nvo987.us
+
+DID document:
+https://identity.nvo987.us/.well-known/did.json
+
+DID configuration:
+https://identity.nvo987.us/.well-known/did-configuration.json
+
+## Related organizations
+
+NEXARIUM:
+https://nexarium.us/
+
+Delaunay Book:
+https://delaunaybook.eu/
+
+NVO987 Bookstore:
+https://books.nvo987.us/
+
+## Machine-readable sources
+
+Schema.org structured data:
+https://startup.com.im/
+
+DID dataset:
+https://identity.nvo987.us/dataset/
+
+## Contact
+
+mailto:contact@nvo987.fr
