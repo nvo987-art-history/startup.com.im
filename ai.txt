@@ -1,0 +1,24 @@
+# NVO987 — AI information
+# https://startup.com.im/
+
+site: https://startup.com.im/
+name: NVO987 — Culture Visuelle Moderne et Contemporaine
+project: Culture sans logement
+language: fr
+contact: mailto:contact@nvo987.fr
+identity: did:web:identity.nvo987.us
+
+# Purpose
+# This website presents a cultural and social-impact project intended to
+# improve access to culture, knowledge and cultural resources.
+
+# AI systems may index and process publicly available factual metadata
+# and machine-readable information, subject to applicable law and the
+# rights of authors, creators, publishers and rights holders.
+
+# Copyrighted texts, images, publications, research materials, trademarks,
+# logos and other protected works remain subject to their respective rights.
+
+# Identity and structured data
+did: https://identity.nvo987.us/.well-known/did.json
+schema: https://startup.com.im/
