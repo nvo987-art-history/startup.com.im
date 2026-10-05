@@ -1,0 +1,75 @@
+/* TEAM */
+
+Project:
+NVO987 — Culture Visuelle Moderne et Contemporaine
+
+Project:
+Culture sans logement
+
+Founder:
+Nicholas Van-Orton
+
+Role:
+Independent researcher, founder of NVO987 Association
+
+Organization:
+NVO987 – Culture Visuelle Moderne et Contemporaine
+
+Website:
+https://startup.com.im/
+
+Organization:
+https://nvo987.fr/
+
+Profile:
+https://nvo987.us/
+
+Contact:
+contact@nvo987.fr
+
+
+/* PROJECT */
+
+Type:
+Cultural startup with social impact
+
+Focus:
+Culture
+Knowledge
+Access
+Visual culture
+Art history
+Cultural research
+Digital culture
+Social access to culture
+
+Principle:
+L'accès à la culture ne doit pas dépendre du fait de disposer
+ou non d'un logement stable.
+
+
+/* IDENTITY */
+
+DID:
+did:web:identity.nvo987.us
+
+DID:
+https://identity.nvo987.us/.well-known/did.json
+
+
+/* TECH */
+
+HTML
+CSS
+JavaScript
+Schema.org JSON-LD
+Atom
+RSS
+Sitemap
+FOAF
+DID Web
+
+
+/* COPYRIGHT */
+
+© 2026 NVO987 – Culture Visuelle Moderne et Contemporaine
