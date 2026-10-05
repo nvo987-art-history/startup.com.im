@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>NVO987 — Culture Visuelle Moderne et Contemporaine</title>
+  <subtitle>Culture sans logement — projet de startup culturelle à impact social</subtitle>
+  <id>https://startup.com.im/</id>
+  <link href="https://startup.com.im/" rel="alternate"/>
+  <link href="https://startup.com.im/atom.xml" rel="self" type="application/atom+xml"/>
+  <updated>2026-10-05T00:00:00Z</updated>
+  <author>
+    <name>NVO987 – Culture Visuelle Moderne et Contemporaine</name>
+    <email>contact@nvo987.fr</email>
+    <uri>https://nvo987.fr/</uri>
+  </author>
+  <rights>© 2026 NVO987 – Culture Visuelle Moderne et Contemporaine</rights>
+
+  <entry>
+    <title>Culture sans logement</title>
+    <id>https://startup.com.im/#culture-sans-logement</id>
+    <link href="https://startup.com.im/" rel="alternate"/>
+    <updated>2026-10-05T00:00:00Z</updated>
+    <published>2026-10-05T00:00:00Z</published>
+    <author>
+      <name>NVO987 – Culture Visuelle Moderne et Contemporaine</name>
+    </author>
+    <summary type="html">
+      <![CDATA[
+      Un projet de startup culturelle à impact social destiné à élargir
+      l'accès à la culture, aux connaissances et aux ressources culturelles
+      pour les personnes confrontées à des difficultés de logement.
+      ]]>
+    </summary>
+    <category term="Culture"/>
+    <category term="Savoirs"/>
+    <category term="Accès"/>
+    <category term="Impact social"/>
+  </entry>
+</feed>
