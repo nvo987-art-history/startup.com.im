@@ -1,80 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NVO987 | Nicholas Van-Orton</title>
-  <meta
-    name="description"
-    content="NVO987 — Nicholas Van-Orton. Culture visuelle moderne et contemporaine."
-  >
-  <meta name="theme-color" content="#17191b">
+  <meta name="description" content="Culture sans logement — projet de startup culturelle à impact social développé par NVO987 – Culture Visuelle Moderne et Contemporaine.">
+  <meta name="theme-color" content="#f45b22">
 
+  <title>Culture sans logement — NVO987</title>
+
+  <!-- Modern typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================================================
-       NVO987 — COMPLETE PREMIUM CSS
-       ========================================================= */
-
     :root {
-      --bg: #f1efe9;
-      --bg-soft: #e9e6df;
-      --ink: #17191b;
-      --ink-soft: #4f5354;
-      --muted: #858786;
-      --line: rgba(23, 25, 27, 0.14);
-      --accent: #a58b62;
-      --accent-light: #c4ad86;
-      --white: #faf9f6;
+      --white: #ffffff;
+      --black: #111111;
+      --orange: #f45b22;
+      --orange-light: #fff1eb;
+      --gray: #666666;
+      --line: #dedede;
+      --soft: #f7f7f5;
 
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "Inter", Arial, sans-serif;
+      --font-display: "Space Grotesk", sans-serif;
+      --font-body: "Inter", sans-serif;
 
-      --page-padding: clamp(1.25rem, 4vw, 5rem);
-      --transition: 450ms cubic-bezier(0.22, 1, 0.36, 1);
+      --container: 1180px;
+      --radius: 2px;
+      --transition: 260ms ease;
     }
 
-    /* ---------- Reset ---------- */
-
-    *,
-    *::before,
-    *::after {
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
-      min-height: 100%;
       scroll-behavior: smooth;
-      background: var(--bg);
     }
 
     body {
-      min-height: 100vh;
-      margin: 0;
-      background:
-        radial-gradient(
-          circle at 82% 8%,
-          rgba(165, 139, 98, 0.08),
-          transparent 28rem
-        ),
-        linear-gradient(
-          135deg,
-          var(--bg) 0%,
-          #f5f3ee 48%,
-          var(--bg-soft) 100%
-        );
-      color: var(--ink);
-      font-family: var(--sans);
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      background: var(--white);
+      color: var(--black);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
     a {
@@ -82,329 +55,764 @@
       text-decoration: none;
     }
 
-    button,
-    input,
-    textarea,
-    select {
-      font: inherit;
-    }
+    /* =========================================
+       TECHNICAL BACKGROUND
+    ========================================= */
 
-    ::selection {
-      background: var(--ink);
-      color: var(--bg);
-    }
-
-    /* ---------- Page Architecture ---------- */
-
-    .page,
-    main,
-    footer {
-      width: 100%;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Subtle editorial grid in the background */
-
-    main::before {
-      content: "";
-      position: absolute;
+    .technical-grid {
+      position: fixed;
       inset: 0;
+      z-index: -2;
       pointer-events: none;
-      opacity: 0.32;
+      opacity: 0.45;
       background-image:
-        linear-gradient(to right, transparent 0, transparent calc(100% - 1px), var(--line) calc(100% - 1px)),
-        linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), var(--line) calc(100% - 1px));
-      background-size: clamp(5rem, 12vw, 12rem) clamp(5rem, 12vw, 12rem);
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
+        linear-gradient(to right, rgba(17,17,17,.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(17,17,17,.035) 1px, transparent 1px);
+      background-size: 50px 50px;
     }
 
-    /* ---------- Main Content ---------- */
-
-    .hero {
-      width: 100%;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: clamp(6rem, 15vh, 12rem) var(--page-padding);
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero::before {
-      content: "";
-      display: block;
-      width: 3.25rem;
-      height: 1px;
-      margin-bottom: clamp(2.5rem, 6vw, 5rem);
-      background: var(--accent);
-      transform-origin: left;
-      animation: revealLine 1.2s var(--transition) both;
-    }
-
-    .eyebrow {
-      margin: 0 0 1.5rem;
-      color: var(--accent);
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      line-height: 1.5;
-      text-transform: uppercase;
-      animation: fadeUp 900ms var(--transition) 100ms both;
-    }
-
-    h1 {
-      max-width: 1050px;
-      margin: 0;
-      color: var(--ink);
-      font-family: var(--serif);
-      font-size: clamp(3rem, 8.2vw, 8.75rem);
-      font-weight: 400;
-      letter-spacing: -0.045em;
-      line-height: 0.94;
-      text-wrap: balance;
-      animation: fadeUp 1000ms var(--transition) 180ms both;
-    }
-
-    .hero-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: clamp(2.75rem, 7vw, 5.5rem);
-      animation: fadeUp 1000ms var(--transition) 300ms both;
-    }
-
-    .hero-meta::before {
-      content: "";
-      width: 2.5rem;
-      height: 1px;
-      flex: 0 0 auto;
-      background: var(--line);
-    }
-
-    .hero-meta p {
-      max-width: 38rem;
-      margin: 0;
-      color: var(--ink-soft);
-      font-size: clamp(0.8rem, 1.2vw, 0.94rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      line-height: 1.7;
-    }
-
-    /* ---------- Decorative Mark ---------- */
-
-    .hero-mark {
-      position: absolute;
-      top: 50%;
-      right: var(--page-padding);
-      width: clamp(8rem, 20vw, 19rem);
-      aspect-ratio: 1;
-      border: 1px solid rgba(165, 139, 98, 0.28);
-      border-radius: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      opacity: 0.65;
-    }
-
-    .hero-mark::before,
-    .hero-mark::after {
-      content: "";
-      position: absolute;
-      inset: 14%;
-      border: 1px solid rgba(23, 25, 27, 0.08);
-      border-radius: 50%;
-    }
-
-    .hero-mark::after {
-      inset: 35%;
-      border-color: rgba(165, 139, 98, 0.32);
-    }
-
-    /* ---------- Footer ---------- */
-
-    footer {
-      position: relative;
-      z-index: 2;
-      background: var(--ink);
-      color: var(--white);
-      overflow: hidden;
-    }
-
-    footer::before {
+    .technical-grid::after {
       content: "";
       position: absolute;
       inset: 0;
-      pointer-events: none;
       background:
-        radial-gradient(
-          circle at 90% 0%,
-          rgba(165, 139, 98, 0.16),
-          transparent 25rem
-        ),
         linear-gradient(
           90deg,
-          rgba(255, 255, 255, 0.025) 1px,
-          transparent 1px
+          transparent 49.9%,
+          rgba(17,17,17,.08) 50%,
+          transparent 50.1%
         );
-      background-size: auto, 7rem 100%;
+      opacity: .3;
     }
 
-    .footer-inner {
+    .orange-line {
+      position: fixed;
+      width: 2px;
+      height: 100vh;
+      background: var(--orange);
+      opacity: .12;
+      left: 7%;
+      top: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    header {
       width: 100%;
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: clamp(3rem, 6vw, 5.75rem) var(--page-padding)
-        clamp(2rem, 4vw, 3.5rem);
       position: relative;
+      z-index: 10;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid var(--black);
+      backdrop-filter: blur(10px);
     }
 
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    .header-inner {
+      max-width: var(--container);
+      margin: auto;
+      min-height: 74px;
+      padding: 0 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
-    .footer-brand {
-      max-width: 34rem;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
 
-    .footer-label {
-      margin: 0 0 1.25rem;
-      color: var(--accent-light);
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--black);
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
     }
 
-    .footer-title {
-      margin: 0;
-      font-family: var(--serif);
-      font-size: clamp(1.7rem, 3vw, 2.8rem);
-      font-weight: 400;
-      letter-spacing: -0.025em;
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      width: 19px;
+      height: 100%;
+      background: var(--black);
+      left: 0;
+      top: 0;
+      clip-path: polygon(0 0, 100% 50%, 0 100%);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--orange);
+      right: 6px;
+      top: 6px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
       line-height: 1.15;
     }
 
-    .footer-subtitle {
-      margin: 1rem 0 0;
-      color: rgba(250, 249, 246, 0.55);
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      line-height: 1.7;
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .04em;
     }
 
-    .footer-links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 2rem;
+    .brand-description {
+      color: var(--gray);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: 4px;
     }
 
-    .link-group {
-      min-width: 0;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .link-group-title {
-      margin: 0 0 1rem;
-      color: rgba(250, 249, 246, 0.4);
-      font-size: 0.6rem;
+    nav a {
+      position: relative;
+      padding: 10px 15px;
+      font-size: 12px;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 0;
+      height: 2px;
+      background: var(--orange);
+      transition: width var(--transition);
+    }
+
+    nav a:hover {
+      border-color: var(--black);
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      max-width: var(--container);
+      margin: auto;
+      min-height: 650px;
+      padding: 80px 28px 70px;
+
+      display: grid;
+      grid-template-columns: 1fr 1.7fr 1fr;
+      align-items: center;
+      gap: 35px;
+
+      position: relative;
+    }
+
+    .technical-label {
+      position: absolute;
+      top: 28px;
+      left: 28px;
+
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
 
-    .footer-link {
-      display: block;
-      width: fit-content;
-      max-width: 100%;
-      margin: 0.55rem 0;
-      color: rgba(250, 249, 246, 0.86);
-      font-size: 0.78rem;
-      line-height: 1.55;
-      overflow-wrap: anywhere;
-      position: relative;
-      transition:
-        color var(--transition),
-        transform var(--transition);
+    .technical-label::after {
+      content: "";
+      display: inline-block;
+      width: 120px;
+      height: 1px;
+      background: var(--black);
+      vertical-align: middle;
+      margin-left: 12px;
     }
 
-    .footer-link::after {
+    .hero-left,
+    .hero-right {
+      position: relative;
+      min-height: 350px;
+    }
+
+    /* =========================================
+       TECHNICAL ILLUSTRATIONS
+    ========================================= */
+
+    .drawing {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      position: relative;
+      border: 1px solid rgba(17,17,17,.25);
+      background: rgba(255,255,255,.6);
+      overflow: hidden;
+    }
+
+    .drawing::before,
+    .drawing::after {
       content: "";
       position: absolute;
-      right: 0;
-      bottom: -0.22rem;
-      left: 0;
+      border: 1px solid rgba(244,91,34,.35);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .drawing::before {
+      width: 260px;
+      height: 260px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .drawing::after {
+      width: 180px;
+      height: 180px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-color: rgba(17,17,17,.2);
+    }
+
+    .corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+    }
+
+    .corner::before,
+    .corner::after {
+      content: "";
+      position: absolute;
+      background: var(--black);
+    }
+
+    .corner::before {
+      width: 18px;
       height: 1px;
-      background: var(--accent-light);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform var(--transition);
+      top: 0;
+      left: 0;
     }
 
-    .footer-link:hover,
-    .footer-link:focus-visible {
-      color: #fff;
-      transform: translateX(0.3rem);
+    .corner::after {
+      width: 1px;
+      height: 18px;
+      top: 0;
+      left: 0;
     }
 
-    .footer-link:hover::after,
-    .footer-link:focus-visible::after {
-      transform: scaleX(1);
-      transform-origin: left;
+    .corner.tl {
+      top: 12px;
+      left: 12px;
+    }
+
+    .corner.tr {
+      top: 12px;
+      right: 12px;
+      transform: rotate(90deg);
+    }
+
+    .corner.bl {
+      bottom: 12px;
+      left: 12px;
+      transform: rotate(-90deg);
+    }
+
+    .corner.br {
+      bottom: 12px;
+      right: 12px;
+      transform: rotate(180deg);
+    }
+
+    .room {
+      position: absolute;
+      width: 150px;
+      height: 190px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid var(--black);
+      background: rgba(255,255,255,.8);
+    }
+
+    .room::before {
+      content: "";
+      position: absolute;
+      width: 75px;
+      height: 20px;
+      bottom: 18px;
+      left: 38px;
+      border: 1px solid var(--black);
+    }
+
+    .room::after {
+      content: "";
+      position: absolute;
+      width: 46px;
+      height: 75px;
+      right: -1px;
+      top: 28px;
+      border-left: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+      background: var(--orange-light);
+    }
+
+    .room-dot {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: var(--orange);
+      border-radius: 50%;
+      top: 22px;
+      left: 25px;
+      animation: pulse 2.5s infinite;
+    }
+
+    .dimension-x {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      height: 1px;
+      background: var(--black);
+    }
+
+    .dimension-x::before,
+    .dimension-x::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      top: -4px;
+      border-top: 1px solid var(--black);
+      border-right: 1px solid var(--black);
+      transform: rotate(45deg);
+    }
+
+    .dimension-x::before {
+      left: 0;
+    }
+
+    .dimension-x::after {
+      right: 0;
+      transform: rotate(225deg);
+    }
+
+    .dimension-y {
+      position: absolute;
+      top: 30px;
+      bottom: 30px;
+      right: 30px;
+      width: 1px;
+      background: var(--black);
+    }
+
+    /* =========================================
+       RIGHT TECHNICAL CIRCLE
+    ========================================= */
+
+    .network {
+      width: 260px;
+      height: 260px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px dashed rgba(17,17,17,.45);
+      border-radius: 50%;
+      animation: slowRotate 35s linear infinite;
+    }
+
+    .network::before {
+      content: "";
+      position: absolute;
+      inset: 35px;
+      border: 1px solid var(--black);
+      border-radius: 50%;
+    }
+
+    .node {
+      width: 58px;
+      height: 58px;
+      position: absolute;
+      border: 1px solid var(--black);
+      background: var(--white);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: .03em;
+    }
+
+    .node::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+    }
+
+    .node:nth-child(1) {
+      top: -29px;
+      left: calc(50% - 29px);
+    }
+
+    .node:nth-child(2) {
+      right: -29px;
+      top: calc(50% - 29px);
+    }
+
+    .node:nth-child(3) {
+      bottom: -29px;
+      left: calc(50% - 29px);
+    }
+
+    .node:nth-child(4) {
+      left: -29px;
+      top: calc(50% - 29px);
+    }
+
+    .node::after {
+      top: -4px;
+      right: -4px;
+    }
+
+    /* =========================================
+       HERO CENTER
+    ========================================= */
+
+    .hero-center {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker {
+      font-family: var(--font-display);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadeUp .8s ease both;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 88px);
+      line-height: .9;
+      letter-spacing: -.065em;
+      font-weight: 700;
+      text-transform: uppercase;
+      animation: fadeUp .9s .1s ease both;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .hero-description {
+      max-width: 620px;
+      margin: 28px auto 0;
+      font-size: 17px;
+      color: #444;
+      line-height: 1.65;
+      animation: fadeUp .9s .2s ease both;
+    }
+
+    .keywords {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      animation: fadeUp .9s .3s ease both;
+    }
+
+    .keywords span {
+      padding: 9px 15px;
+      border: 1px solid var(--black);
+      background: var(--white);
+      transition: var(--transition);
+    }
+
+    .keywords span:hover {
+      color: var(--white);
+      background: var(--orange);
+      border-color: var(--orange);
+      transform: translateY(-3px);
+    }
+
+    /* =========================================
+       PROJECT SECTION
+    ========================================= */
+
+    .project {
+      border-top: 1px solid var(--black);
+      border-bottom: 1px solid var(--black);
+      background: var(--soft);
+    }
+
+    .project-inner {
+      max-width: var(--container);
+      margin: auto;
+      padding: 90px 28px;
+
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 80px;
+    }
+
+    .section-number {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .section-number strong {
+      display: block;
+      font-size: 58px;
+      color: var(--orange);
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .project-content {
+      max-width: 800px;
+    }
+
+    .project-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      margin-bottom: 28px;
+    }
+
+    .project-content p {
+      font-size: 18px;
+      color: #444;
+      max-width: 720px;
+    }
+
+    .principle {
+      margin-top: 40px;
+      padding: 28px 30px;
+      border-left: 5px solid var(--orange);
+      background: var(--white);
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.4vw, 30px);
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    /* =========================================
+       THREE POINTS
+    ========================================= */
+
+    .system {
+      max-width: var(--container);
+      margin: auto;
+      padding: 90px 28px;
+    }
+
+    .system-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .system-heading h2 {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .system-heading p {
+      max-width: 420px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--black);
+      border: 1px solid var(--black);
+    }
+
+    .card {
+      min-height: 260px;
+      padding: 32px;
+      background: var(--white);
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      background: var(--orange);
+      color: var(--white);
+      transform: translateY(-8px);
+      z-index: 2;
+    }
+
+    .card-number {
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .card h3 {
+      font-family: var(--font-display);
+      font-size: 27px;
+      margin-top: 70px;
+      line-height: 1;
+    }
+
+    .card p {
+      font-size: 13px;
+      margin-top: 15px;
+      opacity: .75;
+    }
+
+    .card-line {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 45px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      background: var(--black);
+      color: var(--white);
+      border-top: 4px solid var(--orange);
+    }
+
+    .footer-inner {
+      max-width: var(--container);
+      margin: auto;
+      padding: 55px 28px 35px;
+
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-title {
+      font-family: var(--font-display);
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .footer-subtitle {
+      margin-top: 8px;
+      color: #aaa;
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .footer-column h4 {
+      color: var(--orange);
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      width: fit-content;
+      margin-bottom: 8px;
+      color: #ddd;
+      font-size: 13px;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: var(--orange);
+      transform: translateX(5px);
     }
 
     .footer-bottom {
+      max-width: var(--container);
+      margin: auto;
+      padding: 20px 28px 25px;
+      border-top: 1px solid #333;
+
       display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      padding-top: 1.75rem;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+
+      color: #888;
+      font-size: 11px;
     }
 
-    .footer-copyright,
-    .footer-domain {
-      margin: 0;
-      color: rgba(250, 249, 246, 0.38);
-      font-size: 0.61rem;
-      letter-spacing: 0.12em;
-      line-height: 1.6;
-      text-transform: uppercase;
+    .did-link {
+      color: var(--orange) !important;
+      word-break: break-all;
     }
 
-    .footer-domain {
-      color: rgba(250, 249, 246, 0.55);
-    }
-
-    .footer-domain:hover {
-      color: var(--accent-light);
-    }
-
-    /* ---------- Accessibility ---------- */
-
-    :focus-visible {
-      outline: 1px solid var(--accent-light);
-      outline-offset: 5px;
-    }
-
-    /* ---------- Animations ---------- */
+    /* =========================================
+       ANIMATIONS
+    ========================================= */
 
     @keyframes fadeUp {
       from {
         opacity: 0;
-        transform: translateY(1.5rem);
+        transform: translateY(25px);
       }
 
       to {
@@ -413,206 +821,627 @@
       }
     }
 
-    @keyframes revealLine {
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(244,91,34,.4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 10px rgba(244,91,34,0);
+      }
+    }
+
+    @keyframes slowRotate {
       from {
-        opacity: 0;
-        transform: scaleX(0);
+        transform: translate(-50%, -50%) rotate(0deg);
       }
 
       to {
-        opacity: 1;
-        transform: scaleX(1);
+        transform: translate(-50%, -50%) rotate(360deg);
       }
     }
 
-    /* ---------- Tablet ---------- */
+    /* =========================================
+       TABLET
+    ========================================= */
 
-    @media (min-width: 700px) {
-      .footer-top {
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-        align-items: start;
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 20px;
       }
 
-      .footer-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .hero-left,
+      .hero-right {
+        min-height: 280px;
+      }
+
+      .drawing {
+        min-height: 280px;
+      }
+
+      .room {
+        width: 110px;
+        height: 145px;
+      }
+
+      .network {
+        width: 200px;
+        height: 200px;
+      }
+
+      .node {
+        width: 48px;
+        height: 48px;
+      }
+
+      .project-inner {
+        grid-template-columns: 180px 1fr;
+        gap: 45px;
+      }
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 720px) {
+      .header-inner {
+        min-height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      nav a {
+        flex: 1;
+        text-align: center;
+        padding: 9px 8px;
+        font-size: 10px;
+      }
+
+      .brand-description {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 20px 55px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .technical-label {
+        left: 20px;
+        top: 25px;
+      }
+
+      .hero-center {
+        order: 1;
+      }
+
+      .hero-left {
+        order: 2;
+        width: 100%;
+        min-height: 260px;
+      }
+
+      .hero-right {
+        order: 3;
+        width: 100%;
+        min-height: 260px;
+      }
+
+      .drawing {
+        min-height: 260px;
+      }
+
+      h1 {
+        font-size: clamp(43px, 14vw, 70px);
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .keywords {
+        gap: 7px;
+      }
+
+      .keywords span {
+        padding: 8px 10px;
+        font-size: 9px;
+      }
+
+      .project-inner {
+        padding: 65px 20px;
+        display: block;
+      }
+
+      .section-number {
+        margin-bottom: 30px;
+      }
+
+      .section-number strong {
+        font-size: 45px;
+      }
+
+      .project-content p {
+        font-size: 16px;
+      }
+
+      .principle {
+        padding: 22px;
+        font-size: 20px;
+      }
+
+      .system {
+        padding: 65px 20px;
+      }
+
+      .system-heading {
+        display: block;
+      }
+
+      .system-heading h2 {
+        margin-bottom: 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 220px;
+      }
+
+      .card h3 {
+        margin-top: 55px;
+      }
+
+      .footer-inner {
+        padding: 45px 20px 30px;
+        grid-template-columns: 1fr;
+        gap: 35px;
       }
 
       .footer-bottom {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        padding: 18px 20px 25px;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
 
-    /* ---------- Desktop ---------- */
+    /* =========================================
+       SMALL MOBILE
+    ========================================= */
 
-    @media (min-width: 1100px) {
-      .footer-top {
-        grid-template-columns: minmax(0, 1fr) minmax(30rem, 0.9fr);
-        gap: 6rem;
+    @media (max-width: 420px) {
+      .brand-name {
+        font-size: 13px;
       }
 
-      .footer-links {
-        grid-template-columns: repeat(2, 1fr);
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+      }
+
+      nav {
+        gap: 4px;
+      }
+
+      nav a {
+        font-size: 9px;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .drawing {
+        min-height: 230px;
+      }
+
+      .network {
+        width: 170px;
+        height: 170px;
+      }
+
+      .node {
+        width: 42px;
+        height: 42px;
+        font-size: 8px;
       }
     }
 
-    /* ---------- Reduced Motion ---------- */
+    /* =========================================
+       ACCESSIBILITY
+    ========================================= */
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
       *,
       *::before,
       *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* ---------- Small Mobile ---------- */
-
-    @media (max-width: 420px) {
-      .hero {
-        padding-top: 5rem;
-        padding-bottom: 6rem;
-      }
-
-      .hero-mark {
-        width: 7rem;
-        top: 28%;
-        right: -2rem;
-        opacity: 0.35;
-      }
-
-      .footer-links {
-        grid-template-columns: 1fr;
-        gap: 1.75rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
 
-    <main>
-      <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">NVO987 · Modern Visual Culture</p>
+  <div class="technical-grid"></div>
+  <div class="orange-line"></div>
 
-        <h1 id="page-title">NVO987 | Nicholas Van-Orton</h1>
+  <!-- =======================================
+       HEADER
+  ======================================== -->
+  <header>
+    <div class="header-inner">
 
-        <div class="hero-meta">
-          <p>
-            Technical maintenance in progress until October 30, 2026.
-          </p>
+      <a class="brand" href="https://nvo987.fr" aria-label="NVO987 accueil">
+        <div class="brand-mark"></div>
+
+        <div class="brand-text">
+          <span class="brand-name">NVO987</span>
+          <span class="brand-description">
+            Culture Visuelle Moderne et Contemporaine
+          </span>
         </div>
+      </a>
 
-        <div class="hero-mark" aria-hidden="true"></div>
-      </section>
-    </main>
+      <nav aria-label="Navigation principale">
+        <a href="https://nvo987.fr/contact.html">
+          Contact
+        </a>
 
-    <footer>
-      <div class="footer-inner">
+        <a href="https://nvo987.fr/mentions-legales.html">
+          Mentions légales
+        </a>
+      </nav>
 
-        <div class="footer-top">
+    </div>
+  </header>
 
-          <div class="footer-brand">
-            <p class="footer-label">NVO987</p>
 
-            <p class="footer-title">
-              Culture Visuelle Moderne et Contemporaine
-            </p>
+  <!-- =======================================
+       HERO
+  ======================================== -->
+  <main>
 
-            <p class="footer-subtitle">
-              NVO987 | Nicholas Van-Orton
-            </p>
+    <section class="hero">
+
+      <div class="technical-label">
+        Projet 01 — Impact social
+      </div>
+
+
+      <!-- Technical drawing left -->
+      <div class="hero-left">
+
+        <div class="drawing">
+
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+
+          <div class="room">
+            <div class="room-dot"></div>
           </div>
 
-          <nav class="footer-links" aria-label="Contact and external links">
+          <div class="dimension-x"></div>
+          <div class="dimension-y"></div>
 
-            <div class="link-group">
-              <p class="link-group-title">Contact</p>
-
-              <a
-                class="footer-link"
-                href="mailto:nvo@nvo987.us"
-              >
-                nvo@nvo987.us
-              </a>
-
-              <a
-                class="footer-link"
-                href="mailto:contact@nexarium.us"
-              >
-                contact@nexarium.us
-              </a>
-
-              <a
-                class="footer-link"
-                href="https://identity.nvo987.us"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                did:web: identity.nvo987.us
-              </a>
-            </div>
-
-            <div class="link-group">
-              <p class="link-group-title">Web</p>
-
-              <a
-                class="footer-link"
-                href="https://www.nvo987.fr"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                www.nvo987.fr
-              </a>
-
-              <a
-                class="footer-link"
-                href="https://www.nexarium.us"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                www.nexarium.us
-              </a>
-
-              <a
-                class="footer-link"
-                href="https://nvo987.us"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                nvo987.us
-              </a>
-            </div>
-
-          </nav>
-        </div>
-
-        <div class="footer-bottom">
-          <p class="footer-copyright">
-            © NVO987 · Nicholas Van-Orton
-          </p>
-
-          <a
-            class="footer-domain"
-            href="https://nvo987.us"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            nvo987.us
-          </a>
         </div>
 
       </div>
-    </footer>
 
-  </div>
+
+      <!-- Main message -->
+      <div class="hero-center">
+
+        <div class="hero-kicker">
+          Startup culturelle à impact social
+        </div>
+
+        <h1>
+          <span>Culture</span>
+          <span>sans logement</span>
+        </h1>
+
+        <p class="hero-description">
+          Un projet destiné à élargir l’accès à la culture, aux connaissances
+          et aux ressources culturelles pour les personnes confrontées à
+          des difficultés de logement.
+        </p>
+
+        <div class="keywords">
+          <span>Culture</span>
+          <span>Savoirs</span>
+          <span>Accès</span>
+        </div>
+
+      </div>
+
+
+      <!-- Technical network right -->
+      <div class="hero-right">
+
+        <div class="drawing">
+
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+
+          <div class="network">
+            <div class="node">CULTURE</div>
+            <div class="node">SOCIÉTÉ</div>
+            <div class="node">ACCÈS</div>
+            <div class="node">SAVOIRS</div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================
+         PROJECT
+    ======================================== -->
+    <section class="project">
+
+      <div class="project-inner">
+
+        <div class="section-number">
+          <strong>01</strong>
+          Le projet
+        </div>
+
+        <div class="project-content">
+
+          <h2>
+            La culture ne devrait pas dépendre du logement.
+          </h2>
+
+          <p>
+            NVO987 développe un projet de startup culturelle à impact social
+            visant à rendre la culture et les connaissances plus accessibles.
+            Le premier projet, « Culture sans logement », s’adresse notamment
+            aux personnes confrontées à des difficultés de logement.
+          </p>
+
+          <div class="principle">
+            L’accès à la culture ne doit pas dépendre du fait de disposer
+            ou non d’un logement stable.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================
+         SYSTEM
+    ======================================== -->
+    <section class="system">
+
+      <div class="system-heading">
+
+        <div>
+          <div class="section-number" style="margin-bottom:12px;">
+            02 — Architecture du projet
+          </div>
+
+          <h2>
+            Culture.<br>
+            Connaissances.<br>
+            Accès.
+          </h2>
+        </div>
+
+        <p>
+          Le projet met en relation des ressources culturelles, des
+          connaissances et des acteurs afin de développer de nouvelles
+          possibilités d’accès à la culture.
+        </p>
+
+      </div>
+
+
+      <div class="cards">
+
+        <article class="card">
+
+          <span class="card-number">01 / CULTURE</span>
+
+          <span class="card-line"></span>
+
+          <h3>
+            Contenus<br>
+            culturels
+          </h3>
+
+          <p>
+            Rendre accessibles des contenus et ressources issus du monde
+            culturel.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <span class="card-number">02 / SAVOIRS</span>
+
+          <span class="card-line"></span>
+
+          <h3>
+            Connaissances<br>
+            et transmission
+          </h3>
+
+          <p>
+            Favoriser la circulation des connaissances et des ressources
+            éducatives.
+          </p>
+
+        </article>
+
+
+        <article class="card">
+
+          <span class="card-number">03 / ÉCOSYSTÈME</span>
+
+          <span class="card-line"></span>
+
+          <h3>
+            Culturel · Social<br>
+            Institutionnel
+          </h3>
+
+          <p>
+            Développer des collaborations avec les acteurs culturels,
+            sociaux et institutionnels.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================
+       FOOTER
+  ======================================== -->
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <div class="footer-title">
+          NVO987
+        </div>
+
+        <div class="footer-subtitle">
+          Culture Visuelle Moderne et Contemporaine
+        </div>
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Navigation</h4>
+
+        <a href="https://nvo987.fr">
+          nvo987.fr
+        </a>
+
+        <a href="https://nvo987.fr/contact.html">
+          Contact
+        </a>
+
+        <a href="https://nvo987.fr/mentions-legales.html">
+          Mentions légales
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contact & identité</h4>
+
+        <a href="mailto:contact@nvo987.fr">
+          contact@nvo987.fr
+        </a>
+
+        <a
+          class="did-link"
+          href="did:web:identity.nvo987.us"
+          title="Identité décentralisée NVO987"
+        >
+          did:web:identity.nvo987.us
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 NVO987 – Culture Visuelle Moderne et Contemporaine
+      </span>
+
+      <span>
+        Association culturelle et de recherche
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================
+       SMALL INTERACTION SCRIPT
+  ======================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const cards = document.querySelectorAll(".card");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.15
+        }
+      );
+
+      cards.forEach((card, index) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(25px)";
+        card.style.transition =
+          `opacity 700ms ease ${index * 120}ms,
+           transform 700ms ease ${index * 120}ms,
+           background 260ms ease,
+           color 260ms ease`;
+
+        observer.observe(card);
+      });
+
+    });
+  </script>
+
 </body>
-  </html>
+</html>
