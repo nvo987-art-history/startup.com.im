@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <foaf:Person rdf:about="https://nvo987.us/#person">
+    <foaf:name>Nicholas Van-Orton</foaf:name>
+    <foaf:title>Independent researcher, founder of NVO987 Association</foaf:title>
+    <foaf:homepage rdf:resource="https://nvo987.us/"/>
+    <foaf:mbox rdf:resource="mailto:contact@nvo987.fr"/>
+
+    <foaf:img rdf:resource="https://nvo987.us/images/nicholas-van-orton.jpg"/>
+
+    <foaf:organization>
+      <foaf:Organization rdf:about="https://nvo987.fr/#organization">
+        <foaf:name>NVO987 – Culture Visuelle Moderne et Contemporaine</foaf:name>
+        <foaf:homepage rdf:resource="https://nvo987.fr/"/>
+      </foaf:Organization>
+    </foaf:organization>
+
+    <foaf:account>
+      <foaf:OnlineAccount>
+        <foaf:accountServiceHomepage rdf:resource="https://orcid.org/"/>
+        <foaf:accountName>0009-0007-4628-1871</foaf:accountName>
+      </foaf:OnlineAccount>
+    </foaf:account>
+
+    <foaf:knows>
+      <foaf:Organization rdf:about="https://delaunaybook.eu/#organization">
+        <foaf:name>Delaunay Book – Independent Publisher</foaf:name>
+        <foaf:homepage rdf:resource="https://delaunaybook.eu/"/>
+      </foaf:Organization>
+    </foaf:knows>
+
+    <foaf:knows>
+      <foaf:Organization rdf:about="https://nexarium.us/#organization">
+        <foaf:name>NEXARIUM – Open Decentralized Web Infrastructure</foaf:name>
+        <foaf:homepage rdf:resource="https://nexarium.us/"/>
+      </foaf:Organization>
+    </foaf:knows>
+  </foaf:Person>
+
+</rdf:RDF>
